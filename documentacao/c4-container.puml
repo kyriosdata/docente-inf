@@ -1,0 +1,20 @@
+@startuml c4-container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+left to right direction
+
+HIDE_STEREOTYPE()
+SHOW_PERSON_OUTLINE()
+
+Person(usuario, "Usuário")
+
+System_Boundary(c1, "Avaliação") {
+  Container(cli, "Aplicação", "Python", "Linha de comandos")
+}
+
+ContainerDb(db, "Banco de Dados", "Sistema de arquivos", "Arquivo JSON")
+
+Rel_D(cli, db, "usa")
+Rel_D(usuario, cli, "usa")
+
+@enduml

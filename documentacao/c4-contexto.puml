@@ -1,0 +1,19 @@
+@startuml c4-contexto-original
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+left to right direction
+
+HIDE_STEREOTYPE()
+SHOW_PERSON_OUTLINE()
+
+System(docente, "Avaliação", "Avaliação de desempenho")
+
+Person(usuario, "Usuário", "docente")
+
+System_Ext(db, "Base de dados\n[sistema de arquivos]", "Atividades de docente")
+
+Rel(usuario, docente, "requisita análise", "")
+Rel_D(docente, db, "Carrega atividades", "")
+
+@enduml
