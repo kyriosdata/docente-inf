@@ -1,0 +1,100 @@
+@startuml dominio
+
+hide circle
+hide methods
+hide empty members
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor #505050
+}
+
+class "Resolução" as Resolucao {
+    --
+    avalia(Docente) : Analise
+}
+
+class "Análise" as Analise {
+}
+
+class "Aplicação" as Aplicacao {
+}
+
+class CLI {}
+class Cliente {}
+class Usuario {}
+class Software {}
+
+CLI -down-|> Aplicacao
+Web -down-|> Aplicacao
+API -down-|> Aplicacao
+
+Cliente -right-> Aplicacao : Usa
+Usuario -up-|> Cliente
+Software -up-|> Cliente
+
+note top of Analise : Resultado da aplicação da resolução\npara um dado conjunto de atividades\nde um docente
+
+class Docente {}
+
+interface Function {
+    ---
+    apply(Docente)
+    andThen
+    compose
+}
+
+interface Indicador {}
+
+Indicador -up-|> Function
+
+Resolucao o-right-> "1..*" Indicador : Definida por
+Analise -right-> "1" Docente
+Analise *--> "Compreende" Resultado
+
+class PAE {}
+class PAC {}
+class PAP {}
+
+PAE -up-|> Indicador
+PAC -up-|> Indicador
+PAP -up-|> Indicador
+
+class Resultado {
+    nome
+    valor
+    ---
+    getNome() : String
+    getValor() : String
+    getValorAsDouble() : Double
+}
+
+interface DocenteRepository {
+    ---
+    le(id) : Docente
+}
+
+interface AnaliseRepository {
+    ---
+    cria(Analise)
+}
+
+class DocenteRepositoryJson {}
+class AnaliseRepositoryJson {}
+class AnaliseRepositoryTexto {}
+
+DocenteRepositoryJson -up-|> DocenteRepository
+AnaliseRepositoryJson -up-|> AnaliseRepository
+AnaliseRepositoryTexto -up-|> AnaliseRepository
+
+class UCGeraAnaliseParaDocente {}
+
+Aplicacao -down-> UCGeraAnaliseParaDocente
+UCGeraAnaliseParaDocente ..> DocenteRepository
+UCGeraAnaliseParaDocente ..> AnaliseRepository
+UCGeraAnaliseParaDocente ..> Docente
+UCGeraAnaliseParaDocente ..> Analise
+UCGeraAnaliseParaDocente .right.> Resolucao
+
+@enduml
