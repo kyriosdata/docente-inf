@@ -7,11 +7,9 @@ left to right direction
 HIDE_STEREOTYPE()
 SHOW_PERSON_OUTLINE()
 
-System(docente, "Todo o sistema", "Uma visão do que ele faz")
+System(docente, "AD", "Avaliação de desempenho")
 
-Person(usuario, "Um cliente humano", "Um papel")
-
-System_Ext(db, "Um elemento externo", "Neste caso um banco de dados")
+System(usuario, "Software Cliente", "Ecossistema UFG")
 
 Rel(usuario, docente, "O que ele faz/requisita com/do sistema?", "")
 Rel_D(docente, db, "Conteúdo destes dados", "")
