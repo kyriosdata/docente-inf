@@ -1,0 +1,19 @@
+@startuml c4-contexto-original
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+left to right direction
+
+HIDE_STEREOTYPE()
+SHOW_PERSON_OUTLINE()
+
+System(docente, "Todo o sistema", "Uma visão do que ele faz")
+
+Person(usuario, "Um cliente humano", "Um papel")
+
+System_Ext(db, "Um elemento externo", "Neste caso um banco de dados")
+
+Rel(usuario, docente, "O que ele faz/requisita com/do sistema?", "")
+Rel_D(docente, db, "Conteúdo destes dados", "")
+
+@enduml

@@ -8,11 +8,11 @@ SHOW_PERSON_OUTLINE()
 
 Person(usuario, "Usuário")
 
-System_Boundary(c1, "Avaliação") {
-  Container(cli, "Aplicação", "Python", "Linha de comandos")
+System_Boundary(c1, "Fronteira do sistema") {
+  Container(cli, "Um contêiner", "Detalhe", "Outros")
 }
 
-ContainerDb(db, "Banco de Dados", "Sistema de arquivos", "Arquivo JSON")
+ContainerDb(db, "Ilustra DB", "detalhe", "outros")
 
 Rel_D(cli, db, "usa")
 Rel_D(usuario, cli, "usa")
