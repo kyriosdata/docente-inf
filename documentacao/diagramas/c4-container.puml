@@ -1,4 +1,5 @@
 @startuml c4-container
+
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 left to right direction
@@ -6,15 +7,15 @@ left to right direction
 HIDE_STEREOTYPE()
 SHOW_PERSON_OUTLINE()
 
-Person(usuario, "Usuário")
+System_Ext(usuario, "Software Cliente")
 
-System_Boundary(c1, "Fronteira do sistema") {
-  Container(cli, "Um contêiner", "Detalhe", "Outros")
+System_Boundary(c1, "Sistema de Avaliação Docente (AD)") {
+  Container(cli, "API", "Spring Boot", "Geração e consulta de análises")
+  ContainerDb(db, "Armazenamento", "NoSQL", "Análises")
 }
 
-ContainerDb(db, "Ilustra DB", "detalhe", "outros")
 
-Rel_D(cli, db, "usa")
-Rel_D(usuario, cli, "usa")
+Rel_D(cli, db, "Persiste/recupera análise")
+Rel_D(usuario, cli, "Requisita/consulta análises")
 
 @enduml
