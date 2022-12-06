@@ -29,6 +29,10 @@ será usufruída de forma automática por toda a UFG, sem
 depender de ação técnica e manual, no contexto de um
 processo de avaliação completamente automatizado. 
 
+Naturalmente, quando há mudança na resolução ou novas resoluções são
+criadas, é esperada que a atualização do sistema para contemplar
+as mudanças ocorra "rapidamente". 
+
 # Demanda
 
 Proposta de _software design_ que atenda à necessidade definida. 
