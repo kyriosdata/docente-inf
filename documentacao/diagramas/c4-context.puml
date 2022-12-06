@@ -11,7 +11,6 @@ System(docente, "AD", "Avaliação de desempenho")
 
 System(usuario, "Software Cliente", "Ecossistema UFG")
 
-Rel(usuario, docente, "O que ele faz/requisita com/do sistema?", "")
-Rel_D(docente, db, "Conteúdo destes dados", "")
+Rel(usuario, docente, "Requisita/consulta análises\nde desempenho de docente", "")
 
 @enduml
