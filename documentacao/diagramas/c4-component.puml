@@ -1,0 +1,41 @@
+@startuml c4-component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+UpdateBoundaryStyle($bgColor="gold", $fontColor="brown", $borderColor="brown")
+UpdateSystemBoundaryStyle($bgColor="gold", $fontColor="white", $borderColor="white")
+
+Person(usuario, "Usuário")
+System(cliente, "Cliente externo")
+
+Container_Boundary(c3, "Terceiros") {
+    Component(comp1, "Componente 1", "Faz algo", "Outro detalhe")
+    Component(comp2, "Componente 2", "subtítulo", "visão")
+}
+
+System_Boundary(c1, "Outra fronteira (agrupa apenas)", $tags="v1") {
+    Component(comp6, "Componente 6", "detalhe", "outros")
+    Rel(comp6, comp2, "usa", "importa")
+    Rel(comp6, comp1, "usa", "importa")
+}
+
+System_Boundary(c2, "Mais um agrupador para ilustrar", $tags="v1") {
+    Component(comp3, "Componente 3", "subtítulo", "visão")
+}
+
+System_Boundary(c4, "Outra fronteira", $tags="v2") {
+    Component(comp5, "Componente 5", "subtítulo", "descricao")
+}
+
+Rel(comp3, comp5, "usa", "algum detalhe adicional?")
+
+AddBoundaryTag("v1", $bgColor="lightgreen", $fontColor="green", $borderColor="green")
+AddElementTag("v1", $bgColor="lightred", $fontColor="red", $borderColor="red")
+
+AddBoundaryTag("v2", $bgColor="LightGray", $fontColor="green", $borderColor="green")
+AddElementTag("v2", $bgColor="LightBlue", $fontColor="red", $borderColor="red")
+
+Rel(usuario, comp6, "Usa", "HTTPS")
+Rel_L(comp6, comp3, "usa", "HTTPS")
+Rel(cliente, comp3, "usa", "HTTPS")
+
+@enduml
