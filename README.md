@@ -28,3 +28,15 @@ ao ecossistema da UFG. Neste novo sistema a funcionalidade
 será usufruída de forma automática por toda a UFG, sem
 depender de ação técnica e manual, no contexto de um
 processo de avaliação completamente automatizado. 
+
+# Demanda
+
+Proposta de _software design_ que atenda à necessidade definida. 
+
+# Restrições
+
+Temos uma rigorosa e embaraçosa restrição: não temos mais informações,
+além daquelas citadas acima, nem teremos acesso à fonte de informações 
+antes de uma primeira apresentação da proposta. Relaxe. É esperada uma
+havalanche de sugestões e ajustes, é a cultura do contexto. Contudo, 
+a expectativa é de que a proposta seja "coerente". 
