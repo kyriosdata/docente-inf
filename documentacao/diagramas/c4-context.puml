@@ -9,7 +9,7 @@ SHOW_PERSON_OUTLINE()
 
 System(docente, "AD", "Avaliação de desempenho")
 
-System(usuario, "Software Cliente", "Ecossistema UFG")
+System_Ext(usuario, "Software Cliente", "Ecossistema UFG")
 
 Rel(usuario, docente, "Requisita/consulta análises\nde desempenho de docente", "")
 
