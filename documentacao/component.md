@@ -1,7 +1,8 @@
 ## Diagrama de componentes
 
-Para cada contêiner, quais os componentes correspondentes?
-Ou seja, quais os "pedaços" necessários para cada um
-dos contêineres? Coloque cada um em seu próprio diagrama.
+O contêinere API é implementado observando os princípios de uma 
+arquitetura cebola (_onion architecture_). Em particular, motivada 
+por um negócio "relativamente sofisticado" que deve ser isolado e
+permitir fácil evolução, conforme definido na visão do produto.
 
 ![modelo](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/kyriosdata/docente-inf/main/documentacao/diagramas/c4-component.puml)
