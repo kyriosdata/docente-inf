@@ -4,7 +4,6 @@
 UpdateBoundaryStyle($bgColor="gold", $fontColor="brown", $borderColor="brown")
 UpdateSystemBoundaryStyle($bgColor="gold", $fontColor="white", $borderColor="white")
 
-Person(usuario, "Usuário")
 System(cliente, "Cliente externo")
 
 Container_Boundary(c3, "Terceiros") {
@@ -13,13 +12,13 @@ Container_Boundary(c3, "Terceiros") {
 }
 
 System_Boundary(c1, "Outra fronteira (agrupa apenas)", $tags="v1") {
-    Component(comp6, "Componente 6", "detalhe", "outros")
+    Component(comp6, "Conversores", "JSON/Objeto", "Conversão entre formatos")
     Rel(comp6, comp2, "usa", "importa")
     Rel(comp6, comp1, "usa", "importa")
 }
 
 System_Boundary(c2, "Mais um agrupador para ilustrar", $tags="v1") {
-    Component(comp3, "Componente 3", "subtítulo", "visão")
+    Component(comp3, "REST API", "Controllers", "Recebe requisições")
 }
 
 System_Boundary(c4, "Outra fronteira", $tags="v2") {
@@ -34,8 +33,7 @@ AddElementTag("v1", $bgColor="lightred", $fontColor="red", $borderColor="red")
 AddBoundaryTag("v2", $bgColor="LightGray", $fontColor="green", $borderColor="green")
 AddElementTag("v2", $bgColor="LightBlue", $fontColor="red", $borderColor="red")
 
-Rel(usuario, comp6, "Usa", "HTTPS")
-Rel_L(comp6, comp3, "usa", "HTTPS")
+Rel_L(comp3, comp6, "usa", "")
 Rel(cliente, comp3, "usa", "HTTPS")
 
 @enduml
