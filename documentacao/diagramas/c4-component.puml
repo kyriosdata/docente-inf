@@ -40,4 +40,14 @@ AddElementTag("v2", $bgColor="LightBlue", $fontColor="red", $borderColor="red")
 Rel_L(comp3, comp7, "usa", "")
 Rel(cliente, comp3, "usa", "HTTPS")
 
+Component(comp9, "Resolução X", "Implementação", "Carregado dinamicamente")
+Component(comp10, "Resolução Y", "Implementação", "Carregado dinamicamente")
+
+Component(comp11, "Loader", "Carrega resolução", "Disponibiliza resolução\nem tempo de execução")
+
+Rel_U(comp9, comp1, "Depende de", "")
+Rel_U(comp10, comp1, "Depende de", "")
+Rel_D(comp7, comp11, "carrega", "")
+
+
 @enduml
