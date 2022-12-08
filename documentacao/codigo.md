@@ -1,16 +1,18 @@
 ## Domínio
 
-- Análise (resultado da aplicação de uma resolução para um dado contexto)
+- Análise (resultado da aplicação de uma resolução para um dado contexto). Ou seja, uma análise é definida por um conjunto de resultados obtido de indicadores definidos por uma resolução.
 - Contexto (dados necessários para avaliação de Indicador, inclui Docente em questão e eventualmente outras informações)
-- Docente (dados do docente)
-- Indicador
-- Resultado (de avaliação de indicador)
-- Resolução. Métodos: avalia(contexto): Análise. Resolução possui identificador único e versão. 
-- AnaliseRepository
-- 
+- Docente (dados do docente). À semelhança da análise, trata-se de um conjunto de resultados, cada um deles correspondente a um dado indicador.
+- Indicador. Por exemplo, "quantidade de horas de ensino", "total de artigos A1", ...
+- Resultado (de avaliação de indicador). Enquanto um indicador identifica uma métrica relevante para uma resolução, é a medida correspondente, ou resultado, que registra o valor correspondente.
+- Resolução. Métodos: avalia(contexto): Análise. Resolução possui identificador único e versão. Uma resolução é definida por uma combinação de indicadores.
+- AnaliseRepository. Mantém análises realizadas.
+- ResolucaoRepository. Mantém resoluções disponíveis para serem empregadas pelo AD.
 
-## Loader
+## Repositórios 
 
+- AnaliseRepository oferece acesso a uma análise pelo identificador correspondente (cache). Dependendo do contexto em que a solução será executada, a implementação deverá ser AnaliseRepositoryFileSystem, ou AnaliseRepositoryAzureBlob, AnaliseRepositoryAwsBucket, ...
+-  
 - Loader. Método carrega(arquivo) : Resolução
 
 ![modelo](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/kyriosdata/docente-inf/main/documentacao/diagramas/c4-code.puml)
