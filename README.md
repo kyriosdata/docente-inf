@@ -43,5 +43,5 @@ Proposta de _software design_ que atenda à necessidade definida.
 Temos uma rigorosa e embaraçosa restrição: não temos mais informações,
 além daquelas citadas acima, nem teremos acesso à fonte de informações 
 antes de uma primeira apresentação da proposta. Relaxe. É esperada uma
-havalanche de sugestões e ajustes, é a cultura do contexto. Contudo, 
+havalanche de sugestões e ajustes, é a cultura desta instituição. Contudo, 
 a expectativa é de que a proposta seja "coerente". 
