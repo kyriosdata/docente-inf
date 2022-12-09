@@ -5,5 +5,5 @@ Compreende:
 
 - [Contexto](contexto.md)
 - [Contêineres](container.md)
-- [Componentes](componentes.md) e
-- [Código](code.md).
+- [Componentes](component.md) e
+- [Código](codigo.md).
