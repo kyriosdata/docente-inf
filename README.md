@@ -1,3 +1,7 @@
+# Sistema de Avaliação Docente (AD)
+
+Entenda o [contexto](documentacao/cenario-inicio.md). 
+
 # Contexto corrente (a ser substituído)
 
 Temos uma aplicação [cli.py](cli.py) que automatiza a
