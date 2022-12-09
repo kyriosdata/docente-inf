@@ -1,4 +1,4 @@
-# Contexto corrente (a ser substitu)
+# Contexto corrente (a ser substituído)
 
 Temos uma aplicação [cli.py](cli.py) que automatiza a
 avaliação de desempenho de docentes. Ela desempenha dois
