@@ -2,9 +2,10 @@
 
 Temos uma aplicação [cli.py](cli.py) que automatiza a
 avaliação de desempenho de docentes. Ela desempenha dois
-propósitos básicos: (a) podemos automatizar a avaliação e
+propósitos básicos: (a) mostra que podemos automatizar a avaliação e
 (b) ilustra a funcionalidade esperada de um sistema de 
-informação desejado.
+informação desejado. Este último item é o foco de atenção
+do presente projeto.
 
 # Visão da avaliação de docente
 
