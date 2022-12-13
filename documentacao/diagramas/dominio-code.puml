@@ -45,4 +45,20 @@ Analise -up-> "1" Docente
 Analise -right-> "1" Contexto : Entrada
 Analise --> "1" Resolucao
 Analise -down-> "1" Resultado
+
+class Plugin {
+  arquivo
+  nomeResolucao
+  versaoResolucao
+}
+
+interface ResolucaoRepository {
+  cria&#40;plugin&#41;
+  busca&#40;nome, versao&#41; : Resolucao
+}
+interface AnaliseRepository {
+  busca&#40;docente, data&#41; : [Analise]
+}
+
+
 @enduml
