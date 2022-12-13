@@ -1,7 +1,7 @@
 ## Diagrama de contexto
 
 O atual ator humano deve ser substituído por um software (cliente), que
-faz parte do ecossistema da LG. Este ator fará o papel do atual usuário
+faz parte do ecossistema da UFG. Este ator fará o papel do atual usuário
 humano no atual processo manual (que será removido).
 
 O sistema a ser desenvolvido é denominado de AD (Avaliação Docente).
