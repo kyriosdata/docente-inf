@@ -9,7 +9,7 @@
 - AnaliseRepository. Mantém análises realizadas.
 - ResolucaoRepository. Mantém resoluções disponíveis para serem empregadas pelo AD.
 
-![modelo](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/kyriosdata/docente-inf/main/documentacao/diagramas/dominio-code.puml)
+![modelo](http://www.plantuml.com/plantuml/proxy?cache=no&https://raw.githubusercontent.com/kyriosdata/docente-inf/v1/documentacao/diagramas/dominio-code.puml)
 
 ## Repositórios
 
