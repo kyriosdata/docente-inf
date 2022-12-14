@@ -1,16 +1,6 @@
 @startuml dominio-code
 
-hide circle
-hide methods
-hide empty members
-
-skinparam class {
-    BackgroundColor White
-    ArrowColor Black
-    BorderColor #505050
-}
-
-class "Análise" as Analise {
+class A {
     data
 }
 
