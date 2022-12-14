@@ -6,30 +6,21 @@ UpdateSystemBoundaryStyle($bgColor="gold", $fontColor="white", $borderColor="whi
 
 System(cliente, "Cliente externo")
 
-Container_Boundary(c3, "Terceiros") {
-    Component(comp1, "Domínio", "Regras fixas/interfaces", "Parte invariante")
-    Component(comp2, "Resolução", "Implementa uma resolução", "Carregado dinamicamente")
-    Rel(comp2, comp1, "Implementa", "")
-}
+Component(comp1, "Domínio", "Regras fixas/interfaces", "Parte invariante")
 
-System_Boundary(c1, "Outra fronteira (agrupa apenas)", $tags="v1") {
-    Component(comp6, "Conversores", "JSON/Objeto", "Conversão entre formatos")
-    Component(comp7, "Serviços", "Casos de Uso", "Implementação")
-    Component(comp8, "Repositórios", "Entidades", "Implementação")
-    Rel(comp7, comp1, "usa", "importa")
-    Rel(comp8, comp1, "usa", "importa")
-    Rel(comp6, comp1, "usa", "importa")
-}
+Component(conversores, "Conversores", "JSON/Objeto", "Conversão entre formatos")
+Component(servicos, "Casos de Uso", "package", "Implementação das funções")
+Component(repos, "Repositórios", "Entidades", "Implementação")
+Rel(servicos, comp1, "usa", "importa")
+Rel(repos, comp1, "usa", "importa")
+Rel(conversores, comp1, "usa", "importa")
+Rel(servicos,conversores, "usa")
 
-System_Boundary(c2, "Mais um agrupador para ilustrar", $tags="v1") {
-    Component(comp3, "REST API", "Controllers", "Recebe requisições")
-}
+Component(rest, "REST API", "Controllers", "Recebe requisições")
 
-System_Boundary(c4, "Outra fronteira", $tags="v2") {
-    ComponentDb(comp5, "Componente 5", "subtítulo", "descricao")
-}
+ComponentDb(db, "Armazenamento", "MongoDB", "Análises e dados administrativos")
 
-Rel(comp3, comp5, "usa", "algum detalhe adicional?")
+Rel(repos, db, "usa")
 
 AddBoundaryTag("v1", $bgColor="lightgreen", $fontColor="green", $borderColor="green")
 AddElementTag("v1", $bgColor="lightred", $fontColor="red", $borderColor="red")
@@ -37,17 +28,22 @@ AddElementTag("v1", $bgColor="lightred", $fontColor="red", $borderColor="red")
 AddBoundaryTag("v2", $bgColor="LightGray", $fontColor="green", $borderColor="green")
 AddElementTag("v2", $bgColor="LightBlue", $fontColor="red", $borderColor="red")
 
-Rel_L(comp3, comp7, "usa", "")
-Rel(cliente, comp3, "usa", "HTTPS")
+Rel_L(rest, servicos, "usa", "")
+Rel(cliente, rest, "usa", "HTTPS")
 
-Component(comp9, "Resolução X", "Implementação", "Carregado dinamicamente")
-Component(comp10, "Resolução Y", "Implementação", "Carregado dinamicamente")
+Container_Boundary(loader, "Repositório de resoluções") {
+    Component(comp9, "Resolução X", "Implementação de X", "Carregado dinamicamente")
+    Component(comp10, "Resolução Y", "Implementação de Y", "Carregado dinamicamente")
+}
 
 Component(comp11, "Loader", "Carrega resolução", "Disponibiliza resolução\nem tempo de execução")
 
 Rel_U(comp9, comp1, "Depende de", "")
 Rel_U(comp10, comp1, "Depende de", "")
-Rel_D(comp7, comp11, "carrega", "")
+Rel_D(servicos, comp11, "carrega", "")
+
+Rel(comp11, comp9, "Carrega")
+Rel(comp11, comp1, "Depende de")
 
 
 @enduml

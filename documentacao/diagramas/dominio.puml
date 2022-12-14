@@ -10,8 +10,13 @@ skinparam class {
     BorderColor #505050
 }
 
+class ResolucaoId {
+  nome
+  versao
+}
+
 class "Análise" as Analise {
-    data
+    instante
 }
 
 class Resultado {
@@ -19,31 +24,43 @@ class Resultado {
     valor
 }
 
+class Contexto {
+  valorPara&#40;nome&#41; : Resultado
+}
+
+class Docente {}
+
+class "Avaliação" as Avaliacao {
+  data
+  requisitada por
+}
+
+Avaliacao -right-> "1" Docente
+Avaliacao -down-> "1" Analise
+
 rectangle "regras de negócio" #line.dashed {
 
-    interface "Resolução" as Resolucao {
+    interface "Resolução" as ResolucaoCodigo {
         nome
         versão
         ---
-        avalia&#40;Contexto&#41; : [Resultado]
+        avalia&#40;Contexto&#41; : Analise
+        indicadores&#40;&#41; : Set<String>
     }
 
     interface Indicador {
-        <<PK>> nome : String
+        nome : String
         avalia&#40;Contexto&#41; : Resultado
     }
 }
-class Contexto {}
-class Docente {}
 
-Resolucao "1" --> "1..*" Indicador : Definida\npor
+ResolucaoCodigo "1" --> "1..*" Indicador : Definida\npor
 
 
 Contexto --> "1..*" Resultado
 
-Analise -up-> "1" Docente
-Analise -right-> "1" Contexto : Entrada
-Analise --> "1" Resolucao
+Analise -right-> "1" Contexto : Sobre dados\nde entrada\ndefinidos pelo
+Analise --> "1" ResolucaoId
 Analise -down-> "1" Resultado
 
 class Plugin {
@@ -54,10 +71,12 @@ class Plugin {
 
 interface ResolucaoRepository {
   cria&#40;plugin&#41;
-  busca&#40;nome, versao&#41; : Resolucao
+  busca&#40;nome, versao&#41; : ResolucaoId
 }
-interface AnaliseRepository {
+
+interface AvaliacaoRepository {
   busca&#40;docente, data&#41; : [Analise]
+  ultimaPara&#40;docente&#41; : Analise
 }
 
 
