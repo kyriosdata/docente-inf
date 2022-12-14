@@ -1,4 +1,4 @@
-@startuml dominio-code
+@startuml dominio
 
 hide circle
 hide methods
