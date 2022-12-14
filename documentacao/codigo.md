@@ -1,9 +1,9 @@
 ## Domínio
 
-- Análise (resultado da aplicação de uma resolução para um dado contexto). Ou seja, uma análise é definida por um conjunto de resultados obtido de indicadores definidos por uma resolução.
-- Contexto (dados necessários para a análise)
-- Docente (o docente avaliado).
-- Indicador. Possui um nome, "quantidade de horas de ensino" e "total de artigos A1", por exemplo, e uma expressão que produz o valor correspondente. Um indicador pode ser calculado em função dos resultados de outros indicadores.
+- Análise. Representa uma avaliação de desempenho de um docente. Inclui todos os resultados para cada um dos indicadores empregados pela resolução em questão.
+- Contexto. Conjunto dos dados necessários para a análise. Cada um destes dados é tratado como um resultado de um indicador. Em consequência, pode-se dizer que um contexto é um conjunto de "resultados de indicadores de entrada".
+- Docente. O docente pertinente aos dados de entrada.
+- Indicador. Possui um nome, "quantidade de horas de ensino" e "total de artigos A1", por exemplo, e implementa o cálculo correspondente. Um indicador pode ser calculado em função dos resultados de outros indicadores.
 - Resultado (de avaliação de indicador). Enquanto um indicador identifica uma métrica relevante para uma resolução, é a medida correspondente, ou resultado, que registra o valor correspondente.
 - Resolução. Métodos: avalia(contexto): Análise. Resolução possui identificador único e versão. Uma resolução é definida por uma combinação de indicadores.
 - AnaliseRepository. Mantém análises realizadas.
