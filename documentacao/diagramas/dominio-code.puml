@@ -21,7 +21,7 @@ class Resultado {
 
 rectangle "regras de negócio" #line.dashed {
 
-    class "Resolução" as Resolucao {
+    interface "Resolução" as Resolucao {
         nome
         versão
         ---
@@ -33,11 +33,11 @@ rectangle "regras de negócio" #line.dashed {
         avalia&#40;Contexto&#41; : Resultado
     }
 }
-
 class Contexto {}
 class Docente {}
 
 Resolucao "1" --> "1..*" Indicador : Definida\npor
+
 
 Contexto --> "1..*" Resultado
 
@@ -56,9 +56,9 @@ interface ResolucaoRepository {
   cria&#40;plugin&#41;
   busca&#40;nome, versao&#41; : Resolucao
 }
-
 interface AnaliseRepository {
   busca&#40;docente, data&#41; : [Analise]
 }
+
 
 @enduml
