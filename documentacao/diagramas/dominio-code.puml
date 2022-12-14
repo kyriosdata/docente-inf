@@ -25,12 +25,12 @@ rectangle "regras de negócio" #line.dashed {
         nome
         versão
         ---
-        avalia&#40;Contexto&#41; : [Resultado]
+        avalia contexto : [Resultado]
     }
 
     interface Indicador {
         <<PK>> nome : String
-        avalia&#40;Contexto&#41; : Resultado
+        avalia contexto : Resultado
     }
 }
 class Contexto {}
@@ -53,11 +53,11 @@ class Plugin {
 }
 
 interface ResolucaoRepository {
-  cria&#40;plugin&#41;
-  busca&#40;nome, versao&#41; : Resolucao
+  cria plugin
+  busca por nome e versao : Resolucao
 }
 interface AnaliseRepository {
-  busca&#40;docente, data&#41; : [Analise]
+  busca por docente e data : [Analise]
 }
 
 
