@@ -1,9 +1,11 @@
 ## Diagrama de componentes
 
 O contêiner API é organizado observando-se as diretrizes conhecidas por
-_clean architecture_, arquitetura hexagonal ou ainda _onion architecture_. Em particular, motivada
-por um negócio "relativamente sofisticado" que deve ser isolado e
-permitir fácil evolução, conforme definido na visão do produto.
+_clean architecture_, arquitetura hexagonal ou ainda _onion architecture_. 
+
+Esta decisão é motivada
+por um negócio "relativamente sofisticado" (cômputos da avaliação) que deve ser isolado e
+contemplar a coexistência de implementações de resoluções.
 
 Desta forma, uma requisição é recebida via REST API, que repassa
 a requisição para o serviço "Gera Análise" ou "Recupera Análise".
