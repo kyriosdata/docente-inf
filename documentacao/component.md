@@ -1,7 +1,7 @@
 ## Diagrama de componentes
 
-O contêinere API é implementado observando os princípios de uma
-arquitetura cebola (_onion architecture_). Em particular, motivada
+O contêiner API é organizado observando-se as diretrizes conhecidas por
+_clean architecture_, arquitetura hexagonal ou ainda _onion architecture_. Em particular, motivada
 por um negócio "relativamente sofisticado" que deve ser isolado e
 permitir fácil evolução, conforme definido na visão do produto.
 
