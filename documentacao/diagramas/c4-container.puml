@@ -10,7 +10,7 @@ SHOW_PERSON_OUTLINE()
 System_Ext(usuario, "Software Cliente")
 
 System_Boundary(c1, "Sistema de Avaliação Docente (AD)") {
-  Container(cli, "API", "Spring Boot", "Geração e consulta de análises")
+  Container(cli, "API", "Spring Boot", "Geração e consulta de análises", $link="http://cnn.com")
   ContainerDb(db, "Armazenamento", "NoSQL", "Análises")
 }
 
