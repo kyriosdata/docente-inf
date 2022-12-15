@@ -4,8 +4,10 @@ O contêiner API é organizado observando-se as diretrizes conhecidas por
 _clean architecture_, arquitetura hexagonal ou ainda _onion architecture_. 
 
 Esta decisão é motivada
-por um negócio "relativamente sofisticado" (cômputos da avaliação) que deve ser isolado e
-contemplar a coexistência de implementações de resoluções.
+por um negócio "relativamente sofisticado", a saber, os cômputos da avaliação pertinentes
+a uma resolução. É bom que implementações estejam isoladas umas das
+outras e que a solução possa contemplar 
+contemplar a coexistência de múltiplas implementações.
 
 Desta forma, uma requisição é recebida via REST API, que repassa
 a requisição para o serviço "Gera Análise" ou "Recupera Análise".
