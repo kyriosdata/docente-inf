@@ -6,19 +6,19 @@ UpdateSystemBoundaryStyle($bgColor="gold", $fontColor="white", $borderColor="whi
 
 System(cliente, "Cliente externo")
 
-Component(comp1, "Domínio", "Regras fixas/interfaces", "Parte invariante")
+Component(dominio, "Domínio", "Java package", "Parte invariante")
+Component(servicos, "Casos de Uso", "Java package", "Implementação das funções")
+Component(conversores, "Conversores", "ModelMapper", "Mapper DTO/Domínio")
+Component(rest, "REST API", "Spring Boot", "Recebe requisições")
 
-Component(conversores, "Conversores", "JSON/Objeto", "Conversão entre formatos")
-Component(servicos, "Casos de Uso", "package", "Implementação das funções")
-Component(repos, "Repositórios", "Entidades", "Implementação")
-Rel(servicos, comp1, "usa", "importa")
-Rel(repos, comp1, "usa", "importa")
-Rel(conversores, comp1, "usa", "importa")
-Rel(servicos,conversores, "usa")
+Component(repos, "Repositórios", "Spring Data", "Implementação")
+Rel(servicos, dominio, "usa", "importa")
+Rel(repos, dominio, "usa", "importa")
+Rel(conversores, dominio, "usa", "importa")
+Rel(rest,conversores, "usa")
 
-Component(rest, "REST API", "Controllers", "Recebe requisições")
 
-ComponentDb(db, "Armazenamento", "MongoDB", "Análises e dados administrativos")
+ContainerDb(db, "Armazenamento", "NoSQL", "Análises")
 
 Rel(repos, db, "usa")
 
@@ -38,12 +38,12 @@ Container_Boundary(loader, "Repositório de resoluções") {
 
 Component(comp11, "Loader", "Carrega resolução", "Disponibiliza resolução\nem tempo de execução")
 
-Rel_U(comp9, comp1, "Depende de", "")
-Rel_U(comp10, comp1, "Depende de", "")
+Rel_U(comp9, dominio, "Depende de", "")
+Rel_U(comp10, dominio, "Depende de", "")
 Rel_D(servicos, comp11, "carrega", "")
 
 Rel(comp11, comp9, "Carrega")
-Rel(comp11, comp1, "Depende de")
+Rel(comp11, dominio, "Depende de")
 
 
 @enduml
