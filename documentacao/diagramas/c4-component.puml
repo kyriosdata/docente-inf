@@ -31,19 +31,19 @@ AddElementTag("v2", $bgColor="LightBlue", $fontColor="red", $borderColor="red")
 Rel_L(rest, servicos, "usa", "")
 Rel(cliente, rest, "usa", "HTTPS")
 
-Container_Boundary(loader, "Repositório de resoluções") {
+Container_Boundary(resolucoes, "Repositório de resoluções") {
     Component(comp9, "Resolução X", "Implementação de X", "Carregado dinamicamente")
     Component(comp10, "Resolução Y", "Implementação de Y", "Carregado dinamicamente")
 }
 
-Component(comp11, "Loader", "Carrega resolução", "Disponibiliza resolução\nem tempo de execução")
+Component(loader, "Loader", "Carrega resolução", "Disponibiliza resolução\nem tempo de execução", $link="https://github.com/kyriosdata/dynamic-load")
 
 Rel_U(comp9, dominio, "Depende de", "")
 Rel_U(comp10, dominio, "Depende de", "")
-Rel_D(servicos, comp11, "carrega", "")
+Rel_D(servicos, loader, "carrega", "")
 
-Rel(comp11, comp9, "Carrega")
-Rel(comp11, dominio, "Depende de")
+Rel(loader, comp9, "Carrega")
+Rel(loader, dominio, "Depende de")
 
 
 @enduml
