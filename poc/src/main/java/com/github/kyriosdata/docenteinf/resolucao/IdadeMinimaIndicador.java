@@ -1,4 +1,4 @@
-package com.github.kyriosdata.docenteinf.resolucaox;
+package com.github.kyriosdata.docenteinf.resolucao;
 
 import com.github.kyriosdata.docenteinf.domain.Contexto;
 import com.github.kyriosdata.docenteinf.domain.Indicador;
@@ -50,7 +50,7 @@ public class IdadeMinimaIndicador implements Indicador {
      * vazia se o indicador não depende de outros indicadores.
      */
     @Override
-    public List<String> dependeDe() {
+    public List<String> usa() {
         return Collections.singletonList("idade");
     }
 }

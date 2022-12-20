@@ -2,7 +2,6 @@ package com.github.kyriosdata.docenteinf.domain;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Representa o acesso à implementação de um indicador.
@@ -35,7 +34,7 @@ public interface Indicador {
      * para a avaliação do indicador. A lista deve ser
      * vazia se o indicador não depende de outros indicadores.
      */
-    default List<String> dependeDe() {
+    default List<String> usa() {
         return Collections.emptyList();
     }
 }

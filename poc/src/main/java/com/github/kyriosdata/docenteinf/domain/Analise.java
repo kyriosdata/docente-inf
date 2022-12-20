@@ -13,7 +13,11 @@ import java.util.Map;
 @Setter
 public class Analise {
     private LocalDateTime instante;
-    private Map<String,Resultado> entrada;
-    private Map<String,Resultado> saida;
+    private Contexto entrada;
+    private Contexto saida;
     private ResolucaoId resolucao;
+
+    public Analise() {
+        instante = LocalDateTime.now();
+    }
 }

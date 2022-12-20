@@ -17,4 +17,8 @@ public class Contexto {
     public Resultado get(String nome) {
         return indicadores.getOrDefault(nome, null);
     }
+
+    public void put(String nome, Resultado valor) {
+        indicadores.put(nome, valor);
+    }
 }
