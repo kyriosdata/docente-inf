@@ -1,11 +1,11 @@
 # Sistema de Avaliação Docente (AD)
 
-Visa a produção de informações empregadas no processo
-de avaliação de docentes, em particular, a automatização
-da avaliação. 
+> Objetivo: produção de informações empregadas no processo
+> de avaliação de docentes, em particular, a automatização
+> da avaliação. 
 
 Entenda o [contexto](documentacao/cenario-inicio.md) que dá origem
-a uma proposta preliminar do [design](documentacao/design.md).
-
-Uma prova de conceito, ainda preliminar, está disponível em [poc](poc).
+a uma proposta de [design](documentacao/design.md).
+Especificidades resultaram na necessidade de uma
+prova de conceito ([poc](poc)).
 

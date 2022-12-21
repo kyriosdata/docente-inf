@@ -59,9 +59,9 @@ ResolucaoCodigo "1" --> "1..*" Indicador : Definida\npor
 
 Contexto --> "1..*" Resultado
 
-Analise -right-> "1" Contexto : Sobre dados\nde entrada\ndefinidos pelo
+Analise -right-> "1" Contexto : entrada
+Analise -right-> "1" Contexto : saída
 Analise --> "1" ResolucaoId
-Analise -down-> "1" Resultado
 
 class Plugin {
   arquivo
