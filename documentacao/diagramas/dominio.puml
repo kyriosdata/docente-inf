@@ -15,8 +15,12 @@ class ResolucaoId {
   versao
 }
 
-class "Análise" as Analise {
+class Analise {
+    id
     instante
+    entrada
+    saida
+    resolucao
 }
 
 class Resultado {
@@ -28,15 +32,23 @@ class Contexto {
   valorPara&#40;nome&#41; : Resultado
 }
 
-class Docente {}
-
-class "Avaliação" as Avaliacao {
-  data
-  requisitada por
+class "Avaliacao" as AvaliacaoCommand <<Command>> {
+    docente
+    instante
+    requisitadoPor
+    resolucao
 }
 
-Avaliacao -right-> "1" Docente
-Avaliacao -down-> "1" Analise
+class Avaliacao {
+    docente
+    instante
+    requisitadoPor
+    resolucao
+    analiseId
+}
+
+AvaliacaoCommand o--> Contexto
+Avaliacao --> "1" ResolucaoId
 
 rectangle "regras de negócio" #line.dashed {
 
@@ -44,7 +56,7 @@ rectangle "regras de negócio" #line.dashed {
         nome
         versão
         ---
-        avalia&#40;Contexto&#41; : Analise
+        avalia&#40;Avaliacao, Contexto&#41; : Analise
         indicadores&#40;&#41; : Set<String>
     }
 
@@ -59,9 +71,10 @@ ResolucaoCodigo "1" --> "1..*" Indicador : Definida\npor
 
 Contexto --> "1..*" Resultado
 
-Analise -right-> "1" Contexto : entrada
-Analise -right-> "1" Contexto : saída
+Analise o-right-> "1" Contexto : entrada
+Analise o-right-> "1" Contexto : saída
 Analise --> "1" ResolucaoId
+Avaliacao -right-> Analise #line.dashed : Referencia
 
 class Plugin {
   arquivo

@@ -6,16 +6,18 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 /**
- * Uma análise de desempenho de um docente.
- * A análise identifica o instante
- * em que foi produzida, os dados empregados para
- * na avaliação dos indicadores, os resultados
- * produzidos pela avaliação dos indicadores
- * da resolução em questão.
+ * Resultado da execução de uma requisição de
+ * avaliação de desempenho ({@link Avaliacao}).
  */
 @Getter
 @Setter
 public class Analise {
+
+    /**
+     * O identificador único da análise (surrogate key).
+     */
+    private String id;
+
     /**
      * Instante em que a análise foi produzida.
      */

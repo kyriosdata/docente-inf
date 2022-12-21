@@ -3,10 +3,13 @@ package com.github.kyriosdata.docenteinf.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
- * Uma avaliação de um docente.
+ * Uma requisição de avaliação de desempenho de um docente.
+ * Quando executada de forma satisfatória, produz uma
+ * análise correspondente ({@link Analise}) cujo
+ * identificaodr é forneicdo por {@link #getAnaliseId()}.
  */
 @Getter
 @Setter
@@ -19,9 +22,9 @@ public class Avaliacao {
     private Docente docente;
 
     /**
-     * A data em que foi requisitada a avaliação.
+     * O instante em que a avaliação foi requisitada.
      */
-    private LocalDate data;
+    private LocalDateTime instante;
 
     /**
      * A identificação de quem fez a requisição.
@@ -29,7 +32,13 @@ public class Avaliacao {
     private String requisitadaPor;
 
     /**
-     * A análise produzida pela avaliação.
+     * A resolução a ser empregada na avaliação requisitada.
      */
-    private Analise analise;
+    private ResolucaoId resolucao;
+
+    /**
+     * O identificador da análise produzida quando
+     * a avaliação é realizada de forma satisfatória.
+     */
+    private String analiseId;
 }
