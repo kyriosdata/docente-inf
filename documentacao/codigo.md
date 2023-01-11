@@ -14,5 +14,4 @@
 ## Repositórios
 
 - AnaliseRepository oferece acesso a uma análise pelo identificador correspondente (cache). Dependendo do contexto em que a solução será executada, a implementação deverá ser AnaliseRepositoryFileSystem, ou AnaliseRepositoryAzureBlob, AnaliseRepositoryAwsBucket, ...
--
 - Loader. Método carrega(arquivo) : Resolução
