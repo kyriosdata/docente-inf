@@ -21,7 +21,7 @@ em geral, combinados formando outros indicadores.
 O resultado da avaliação é um conjunto
 de valores, cada um deles definido por um ou mais indicadores.
 
-Conforme já mencionado, estas funções estão ilustradas pela aplicação em [cli.py](cli.py).
+Conforme já mencionado, estas funções estão ilustradas pela aplicação em [cli.py](../cli.py).
 
 # Necessidade
 
