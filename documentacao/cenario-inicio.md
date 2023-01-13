@@ -1,7 +1,7 @@
 # Contexto corrente (a ser substituído)
 
 As funções necessárias para automatizar a avaliação de
-desempenho de docentes estão implementadas em uma aplicação [cli.py](cli.py).
+desempenho de docentes estão implementadas em uma aplicação [cli.py](../cli.py).
 
 Tal implementação desempenha dois
 propósitos básicos: (a) mostrar que podemos automatizar a avaliação e
