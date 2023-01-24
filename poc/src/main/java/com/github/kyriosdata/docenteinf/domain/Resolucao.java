@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2023.
+ * Fábrica de Software - Instituto de Informática (UFG)
+ * Creative Commons Attribution 4.0 International License.
+ */
+
 package com.github.kyriosdata.docenteinf.domain;
 
 import java.util.Collections;
@@ -7,12 +13,26 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Representa o acesso a uma implementação de uma resolução.
- * A implementação deve possuir um identificador único e
+ * Serviços oferecidos por cada implementação de uma resolução.
+ *
+ * <p>A implementação deve possuir um identificador único e
  * oferecer como resultado da avaliação correspondente uma
  * {@link Analise}. A análise deve reunir os resultados
- * correspondentes aos indicadores produzidos pela
- * resolução ({@link #indicadores()}).
+ * correspondentes aos indicadores empregados pela
+ * resolução ({@link #indicadores()}).</p>
+ *
+ * <p>Inicialmente o Contexto contém os valores iniciais
+ * de entrada, necessários para a avaliação da resolução.
+ * Este contexto será acrescido dos indicadores avaliados,
+ * pois possivelmente serão empregados pelas avaliações
+ * de outros indicadores, conforme a ordenação topológica
+ * deles.</p>
+ *
+ * <p>De forma simplificada, a implementação desta interface
+ * reúne todas as implementações dos indicadores ({@link Indicador}).
+ * A implementação de um indicador fará uso de outros indicadores,
+ * cujos resultados estarão disponíveis no Contexto.
+ * </p>
  */
 public interface Resolucao {
 
