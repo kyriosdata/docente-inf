@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2023.
+ * Fábrica de Software - Instituto de Informática (UFG)
+ * Creative Commons Attribution 4.0 International License.
+ */
+
 package com.github.kyriosdata.docenteinf.domain;
 
 import java.util.Collections;
@@ -5,6 +11,7 @@ import java.util.List;
 
 /**
  * Representa o acesso à implementação de um indicador.
+ * Cada indicador deve implementar esta interface.
  */
 public interface Indicador {
     /**
