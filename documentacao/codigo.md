@@ -13,3 +13,7 @@
 
 - AnaliseRepository oferece acesso a uma análise pelo identificador correspondente (cache). Dependendo do contexto em que a solução será executada, a implementação deverá ser AnaliseRepositoryFileSystem, ou AnaliseRepositoryAzureBlob, AnaliseRepositoryAwsBucket, ...
 - ResolucaoRepository. Mantém resoluções disponíveis para serem empregadas pelo AD.
+
+## Prova de Conceito (POC)
+
+![domain-poc](diagramas/domain-poc.png)
