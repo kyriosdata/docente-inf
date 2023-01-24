@@ -16,4 +16,8 @@
 
 ## Prova de Conceito (POC)
 
+Diagrama gerado automaticamente pelo IDE empregado a
+partir do código fonte da prova de conceito.
+A prova de conceito está disponível em [poc](../poc/).
+
 ![domain-poc](diagramas/domain-poc.png)
