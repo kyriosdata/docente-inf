@@ -6,10 +6,10 @@ desempenho de docentes estão implementadas em uma aplicação [cli.py](../cli.p
 Tal implementação desempenha dois
 propósitos básicos: (a) mostrar que podemos automatizar a avaliação e
 (b) ilustrar a funcionalidade esperada de um sistema de
-informação desejado.
+informação desejado (a ser construído).
 
-Este último item é o foco de atenção
-do presente projeto.
+De fato, o desenvolvimento de um sistema de informação que realiza tal funcionalidade
+ é o foco de atenção do presente projeto.
 
 # Visão da avaliação de docente
 
