@@ -29,12 +29,12 @@ A aplicação citada, apesar da sua utilidade, deve ser
 substituída por sistema de informação a ser incorporado
 ao ecossistema da UFG. Neste novo sistema, Sistema de Avaliação Docente, ou simplesmente AD, a funcionalidade
 será usufruída de forma automática por toda a UFG, sem
-depender de ação técnica e manual, no contexto de um
+depender de ação técnica e manual, por um
 processo de avaliação completamente automatizado.
 
 Naturalmente, quando há mudança na resolução ou novas resoluções são
-criadas, é esperada que a atualização do sistema para contemplar
-as mudanças ocorra "rapidamente".
+criadas, é esperada que a atualização do sistema que contemple
+as mudanças possa ocorrer "rapidamente".
 
 # Demanda
 
