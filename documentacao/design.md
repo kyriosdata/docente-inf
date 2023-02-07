@@ -1,4 +1,4 @@
-# Segunda versão (v1)
+# Terceira versão (v3) (apta para desenvolvimento)
 
 O _software design_ do AD tem seu registro inspirado no
 Modelo C4 (consulte o [C4Model](https://c4model.com)
