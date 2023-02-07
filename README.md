@@ -9,4 +9,4 @@ a uma proposta de [design](documentacao/design.md).
 
 Especificidades foram esclarecidas com uma
 prova de conceito ([poc](poc)) e, adicionalmente,
-um projeto auxiliar ([dynamic-load](https://github.com/kyriosdata/dynamic-load)).
+por um projeto auxiliar ([dynamic-load](https://github.com/kyriosdata/dynamic-load)).
